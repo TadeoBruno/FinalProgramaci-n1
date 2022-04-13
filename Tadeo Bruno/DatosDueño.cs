@@ -15,20 +15,21 @@ namespace Tadeo_Bruno
     public partial class DatosDueño : Form
     {
         public string Nombre;
-        public DatosDueño()
+        public DatosDueño(string Nombre)
         {
             InitializeComponent();
-            lblNombreMascota.Text = "Dueño de:" + Nombre.ToString();
+            //string Nombre;
+            //this.Nombre = Nombre;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            COMUN.MetodosComunes.KeyPressSoloLetras(e, "");
+            //COMUN.MetodosComunes.KeyPressSoloLetras(e, "");
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            COMUN.MetodosComunes.KeyPressSoloLetras(e, "");
+            //COMUN.MetodosComunes.KeyPressSoloLetras(e, "");
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -101,6 +102,11 @@ namespace Tadeo_Bruno
             this.Hide();
             Form1 v2 = new Form1();
             v2.Show();
+        }
+
+        private void DatosDueño_Load(object sender, EventArgs e)
+        {
+            lblNombreMascota.Text = "Dueño de: " + Nombre;
         }
     }
 }

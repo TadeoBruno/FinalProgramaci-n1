@@ -17,6 +17,8 @@ namespace Tadeo_Bruno
             InitializeComponent();
         }
 
+        string Nombre;
+
         private void cmbTipoMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -50,7 +52,7 @@ namespace Tadeo_Bruno
         private void rbtnSi_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnSi.Checked)
-            txtDescripcionOtroAnimal.Enabled = true;
+                txtDescripcionOtroAnimal.Enabled = true;
         }
 
         public void btnContinuar_Click(object sender, EventArgs e)
@@ -66,8 +68,7 @@ namespace Tadeo_Bruno
             else
             {
                 this.Hide();
-                DatosDueño v1 = new DatosDueño();
-                v1.Nombre = txtNombreMascota.Text;
+                DatosDueño v1 = new DatosDueño(Nombre);
                 v1.Show();
             }
         }
@@ -79,6 +80,20 @@ namespace Tadeo_Bruno
                 {
                     validardatos = false;
                 }
+
+                if (numUDCantPersnonas.Value == 0)
+                {
+                    validardatos = false;
+                }
+
+            if (rbtnSi.Checked)
+            {
+                if (string.IsNullOrEmpty(txtDescripcionMascota.Text))
+                {
+                    validardatos = false;
+                }
+            }
+
                 //if (string.IsNullOrEmpty(txtDescripcionOtroAnimal.Text))
                // {
                 //    validardatos = false;
@@ -104,6 +119,17 @@ namespace Tadeo_Bruno
             {
                 txtDescripcionMascota.Enabled = true;
             }
+            else txtDescripcionMascota.Enabled = false;
+        }
+
+        private void rbtnNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnNo.Checked)
+            txtDescripcionOtroAnimal.Enabled = false;
+        }
+        private void txtNombreMascota_TextChanged(object sender, EventArgs e)
+        {
+            Nombre = txtNombreMascota.Text;
         }
     }
 }

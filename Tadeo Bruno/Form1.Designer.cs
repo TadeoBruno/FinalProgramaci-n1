@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbTipoMascota = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numUDCantPersnonas = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.rbtnSi = new System.Windows.Forms.RadioButton();
             this.rbtnNo = new System.Windows.Forms.RadioButton();
@@ -43,7 +43,7 @@
             this.txtDescripcionMascota = new System.Windows.Forms.TextBox();
             this.txtDescripcionOtroAnimal = new System.Windows.Forms.TextBox();
             this.btnContinuar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDCantPersnonas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,12 +93,13 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Cantidad de personas con las que convive:";
             // 
-            // numericUpDown1
+            // numUDCantPersnonas
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(230, 103);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
-            this.numericUpDown1.TabIndex = 5;
+            this.numUDCantPersnonas.Location = new System.Drawing.Point(230, 103);
+            this.numUDCantPersnonas.Name = "numUDCantPersnonas";
+            this.numUDCantPersnonas.ReadOnly = true;
+            this.numUDCantPersnonas.Size = new System.Drawing.Size(36, 20);
+            this.numUDCantPersnonas.TabIndex = 5;
             // 
             // label5
             // 
@@ -132,6 +133,7 @@
             this.rbtnNo.TabStop = true;
             this.rbtnNo.Text = "No";
             this.rbtnNo.UseVisualStyleBackColor = true;
+            this.rbtnNo.CheckedChanged += new System.EventHandler(this.rbtnNo_CheckedChanged);
             // 
             // txtNombreMascota
             // 
@@ -139,6 +141,7 @@
             this.txtNombreMascota.Name = "txtNombreMascota";
             this.txtNombreMascota.Size = new System.Drawing.Size(100, 20);
             this.txtNombreMascota.TabIndex = 9;
+            this.txtNombreMascota.TextChanged += new System.EventHandler(this.txtNombreMascota_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -198,7 +201,7 @@
             this.Controls.Add(this.rbtnNo);
             this.Controls.Add(this.rbtnSi);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numUDCantPersnonas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbTipoMascota);
             this.Controls.Add(this.label3);
@@ -207,7 +210,7 @@
             this.Name = "Form1";
             this.Text = "Datos de la mascota";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUDCantPersnonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,7 +223,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbTipoMascota;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numUDCantPersnonas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rbtnSi;
         private System.Windows.Forms.RadioButton rbtnNo;

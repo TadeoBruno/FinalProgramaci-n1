@@ -166,6 +166,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DatosDueño";
             this.Text = "DatosDueño";
+            this.Load += new System.EventHandler(this.DatosDueño_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
