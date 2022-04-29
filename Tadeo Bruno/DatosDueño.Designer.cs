@@ -97,9 +97,11 @@
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(65, 124);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(100, 20);
             this.txtDNI.TabIndex = 6;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // txtMail
             // 
@@ -185,6 +187,6 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Label lblNombreMascota;
+        public System.Windows.Forms.Label lblNombreMascota;
     }
 }

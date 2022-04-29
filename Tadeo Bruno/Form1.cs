@@ -16,14 +16,13 @@ namespace Tadeo_Bruno
         {
             InitializeComponent();
         }
-
-        string Nombre;
-
+        public struct Dato
+        {
+            public string NombreMascota;
+        }
         private void cmbTipoMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbTipoMascota.Items.Add("Tipo de mascota");
@@ -57,6 +56,8 @@ namespace Tadeo_Bruno
 
         public void btnContinuar_Click(object sender, EventArgs e)
         {
+            Dato NombreM;
+            NombreM.NombreMascota = txtNombreMascota.Text ;
             bool valido;
             valido = validar();
 
@@ -68,7 +69,7 @@ namespace Tadeo_Bruno
             else
             {
                 this.Hide();
-                DatosDueño v1 = new DatosDueño(Nombre);
+                DatosDueño v1 = new DatosDueño(NombreM);
                 v1.Show();
             }
         }
@@ -85,33 +86,20 @@ namespace Tadeo_Bruno
                 {
                     validardatos = false;
                 }
-
-            if (rbtnSi.Checked)
-            {
-                if (string.IsNullOrEmpty(txtDescripcionMascota.Text))
+                if (txtDescripcionOtroAnimal.Enabled && txtDescripcionOtroAnimal.Text.Length == 0)
                 {
-                    validardatos = false;
+                      validardatos = false; 
                 }
-            }
-
-                //if (string.IsNullOrEmpty(txtDescripcionOtroAnimal.Text))
-               // {
-                //    validardatos = false;
-               // }
-                //if (string.IsNullOrEmpty(txtDescripcionMascota.Text))
-               // {
-                //    validardatos = false;
-               // }
+                if (txtDescripcionMascota.Enabled && txtDescripcionMascota.Text.Length == 0)
+                {
+                      validardatos = false;
+                }
                 if (cmbTipoMascota.SelectedIndex == 0)
-                {
-                    validardatos = false;
+                    {
+                        validardatos = false;
+                    }
+                    return validardatos;
                 }
-                //if ()
-                //{
-                //    validardatos = false;
-               // }
-                return validardatos;
-            }
 
         private void cmbTipoMascota_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -129,7 +117,7 @@ namespace Tadeo_Bruno
         }
         private void txtNombreMascota_TextChanged(object sender, EventArgs e)
         {
-            Nombre = txtNombreMascota.Text;
+
         }
     }
 }
